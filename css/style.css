@@ -1,0 +1,42 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+#main_div{
+    border: solid 5px black ;
+    outline: solid 2px gray;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    width: 400px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+div{
+    border: solid px blue;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+#main_div div:not(#visor){
+    display: flex;
+    flex: 1;
+}
+
+#visor{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    flex: 1;
+}
