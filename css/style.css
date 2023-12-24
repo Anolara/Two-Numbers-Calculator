@@ -13,10 +13,6 @@ html, body {
     flex-direction: column;
 }
 
-div{
-    border: solid px blue;
-}
-
 body{
     display: flex;
     justify-content: center;
@@ -31,12 +27,28 @@ body{
 }
 
 #visor{
-    height: 150px;
+    font-size: 40px;
+    font-weight: 400;
+    border: 5px solid black;
+    margin: 50px 5px 20px 5px;
+    height: 100px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    padding-right: 10px;
 }
 
 button{
     flex: 1;
+    margin-right: 5px;
+}
+
+.btn_container{
+    display: flex;
+    padding: 2px;
+}
+
+.blank{
+    background-color: white;
+    border: 0;
 }
