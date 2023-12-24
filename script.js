@@ -29,7 +29,6 @@ function multNumber(num_1, num_2){
 function divNumber(num_1, num_2){
     return parseFloat(num_1) / parseFloat(num_2);
 }
-
 // ===========================================================================================
 // Script
 
@@ -42,14 +41,10 @@ calculator.addEventListener('click', function(event) {
             visor.textContent = visor.textContent + target.textContent;
             if(first_number === null && symbol === null && second_number === null){
                 prev_first_number += target.textContent;
-
             }
-
             if(first_number != null && symbol != null && second_number === null){
                 prev_second_number += target.textContent;
             }
-
-
         }
 
         if(target.classList.contains('operator')){
@@ -58,17 +53,9 @@ calculator.addEventListener('click', function(event) {
                 first_number = parseInt(prev_first_number);
                 visor.textContent = visor.textContent + ' ' + target.textContent + ' ';
                 symbol = target.textContent;
-                // visor.textContent = visor.textContent + target.textContent + " ";
-
-                // btns_number.forEach(function(btn) {
-                //     btn.disabled = false});
-                
                 btns_operator.forEach(function(btn) {
                      btn.disabled = true});
             }
-
-
-
         }
 
         if(target.classList.contains('equal')){
@@ -92,12 +79,19 @@ calculator.addEventListener('click', function(event) {
                     btns_number.forEach(function(btn) {
                         btn.disabled = true});
                 }
+                else if(symbol === '/' && second_number === 0){
+                    visor.textContent = "Não é possível dividir por 0.";
+                    btns_number.forEach(function(btn) {
+                    btn.disabled = true});
+                }
                 else if(symbol === '/'){
                     result = divNumber(first_number, second_number);
                     visor.textContent = result;
                     btns_number.forEach(function(btn) {
                     btn.disabled = true});
                 }
+
+                console.log(second_number, symbol)
             }
         }
         
